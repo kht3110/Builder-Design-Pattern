@@ -1,0 +1,407 @@
+1
+00:00:00,271 --> 00:00:01,634
+Hello my name is Mary.
+
+2
+00:00:05,642 --> 00:00:08,128
+This pattern is extremely useful but we
+
+3
+00:00:08,128 --> 00:00:10,092
+need to construct complicated objects
+
+4
+00:00:10,172 --> 00:00:12,096
+with a long list of variables in the
+
+5
+00:00:12,096 --> 00:00:14,742
+constructor method. Let's work through
+
+6
+00:00:14,742 --> 00:00:16,586
+the concept with an example from the
+
+7
+00:00:16,586 --> 00:00:19,472
+popular Demon Slayer. Imagine you
+
+8
+00:00:19,472 --> 00:00:21,236
+are a swordsmith that works for the Demon
+
+9
+00:00:21,236 --> 00:00:23,882
+Slayer Corporation. There are so many
+
+10
+00:00:23,882 --> 00:00:26,207
+members in this corporation and each of
+
+11
+00:00:26,207 --> 00:00:29,173
+them needs a . Sadly, your village
+
+12
+00:00:29,173 --> 00:00:31,458
+is short of labour and a vast amount of
+
+13
+00:00:31,458 --> 00:00:34,304
+order is coming in. You desperately need
+
+14
+00:00:34,304 --> 00:00:36,349
+a more efficient method to craft those
+
+15
+00:00:36,349 --> 00:00:39,074
+swords. For those who have no idea
+
+16
+00:00:39,074 --> 00:00:41,600
+what a Nichirintou is, here are some
+
+17
+00:00:41,600 --> 00:00:44,596
+examples. So, what
+
+18
+00:00:44,596 --> 00:00:46,280
+should you do to meet the demand from the
+
+19
+00:00:46,280 --> 00:00:49,096
+Demon Slayer Corporation. Here comes the
+
+20
+00:00:49,096 --> 00:00:51,341
+Builder Design Pattern. The Builder
+
+21
+00:00:51,341 --> 00:00:53,305
+Design Pattern is one of the creational
+
+22
+00:00:53,466 --> 00:00:56,071
+design patterns. It aims to separate
+
+23
+00:00:56,071 --> 00:00:58,116
+the construction of a complex object from
+
+24
+00:00:58,116 --> 00:01:00,240
+its representation so that the same
+
+25
+00:01:00,240 --> 00:01:02,405
+construction process can create different
+
+26
+00:01:02,405 --> 00:01:04,730
+representations. And this is a good
+
+27
+00:01:04,730 --> 00:01:06,895
+choice when there are too many arguments
+
+28
+00:01:06,895 --> 00:01:09,380
+in the constructor or parameters to be
+
+29
+00:01:09,380 --> 00:01:11,665
+initialized in the object class. The
+
+30
+00:01:11,665 --> 00:01:14,311
+Builder Design Pattern also allows us to
+
+31
+00:01:14,311 --> 00:01:16,435
+create different types of objects using
+
+32
+00:01:16,435 --> 00:01:19,081
+the same Builder Interface. The Builder
+
+33
+00:01:19,081 --> 00:01:21,246
+Interface is an abstract interface for
+
+34
+00:01:21,246 --> 00:01:23,931
+creating parts of a Product object. It
+
+35
+00:01:23,931 --> 00:01:25,655
+includes the steps for construction that
+
+36
+00:01:25,655 --> 00:01:28,301
+are common to all builders. The
+
+37
+00:01:28,301 --> 00:01:30,225
+Concrete Builder Class provides the
+
+38
+00:01:30,225 --> 00:01:32,350
+different implementations of construction
+
+39
+00:01:32,350 --> 00:01:34,915
+steps. Product Classes are the
+
+40
+00:01:34,915 --> 00:01:37,881
+resulting objects. Director Class
+
+41
+00:01:38,082 --> 00:01:39,806
+gives instructions to construct the
+
+42
+00:01:39,806 --> 00:01:41,249
+objects using the Builder Interface.
+
+43
+00:01:42,692 --> 00:01:44,616
+Finally, for the Client Class, they send
+
+44
+00:01:44,616 --> 00:01:46,701
+the order to the Director and indicate
+
+45
+00:01:46,701 --> 00:01:49,106
+what objects they want. Sounds
+
+46
+00:01:49,106 --> 00:01:51,591
+complicated, right? No worries, we will
+
+47
+00:01:51,591 --> 00:01:53,635
+go through this bit by bit. As a
+
+48
+00:01:53,916 --> 00:01:55,359
+swordsmith, the final products are
+
+49
+00:01:55,479 --> 00:01:57,364
+Nichirintou and Saya, which is the
+
+50
+00:01:57,364 --> 00:02:00,130
+scabbard of the Nichirintou. In the two
+
+51
+00:02:00,130 --> 00:02:02,174
+classes, I specify the elements that
+
+52
+00:02:02,174 --> 00:02:04,900
+constitute a Nichirintou and Saya, with
+
+53
+00:02:04,900 --> 00:02:07,265
+the getter methods in them. Setter
+
+54
+00:02:07,265 --> 00:02:09,349
+methods are not stated here as we want to
+
+55
+00:02:09,349 --> 00:02:11,193
+separate the construction process from
+
+56
+00:02:11,193 --> 00:02:13,639
+the classes. You can see it as the goods
+
+57
+00:02:13,639 --> 00:02:16,325
+only, instead of creators. To code the
+
+58
+00:02:16,325 --> 00:02:17,968
+setter methods, we create a Builder
+
+59
+00:02:17,968 --> 00:02:20,854
+Interface to put those in. Then, we set
+
+60
+00:02:20,854 --> 00:02:22,778
+up concrete Builder Classes to craft the
+
+61
+00:02:22,778 --> 00:02:25,304
+Nichirintou and Saya, with the names of
+
+62
+00:02:25,304 --> 00:02:28,270
+NichirintouBuilder and SayaBuilder. These
+
+63
+00:02:28,270 --> 00:02:30,154
+concrete builder classes implement the
+
+64
+00:02:30,154 --> 00:02:32,319
+Builder Interface and return the products
+
+65
+00:02:32,319 --> 00:02:34,925
+with the getResult method. The
+
+66
+00:02:34,925 --> 00:02:36,769
+concrete builders are similar to the
+
+67
+00:02:36,769 --> 00:02:38,532
+workers to get the goods manufactured.
+
+68
+00:02:39,214 --> 00:02:40,657
+They follow the working protocol, which
+
+69
+00:02:40,858 --> 00:02:42,782
+is the Builder Interface to finish their
+
+70
+00:02:42,782 --> 00:02:45,347
+jobs. Up till now, we don't have the
+
+71
+00:02:45,347 --> 00:02:47,833
+places to input our desired specs for the
+
+72
+00:02:47,833 --> 00:02:50,398
+Nichirintou and Saya. To do
+
+73
+00:02:50,398 --> 00:02:53,164
+so, we set up a Director class. This will
+
+74
+00:02:53,164 --> 00:02:55,569
+specify the steps and parameters to be
+
+75
+00:02:55,569 --> 00:02:58,055
+put into the Builder Interface. You can
+
+76
+00:02:58,055 --> 00:02:59,738
+consider this class as the boss that
+
+77
+00:02:59,738 --> 00:03:01,542
+orders its workers to build on different
+
+78
+00:03:01,542 --> 00:03:03,987
+things. But the boss won't tell his
+
+79
+00:03:03,987 --> 00:03:06,313
+employees to work for no reason. There
+
+80
+00:03:06,313 --> 00:03:08,678
+must be a client to send an order to the
+
+81
+00:03:08,678 --> 00:03:11,404
+boss. Thus, it's time for the Application
+
+82
+00:03:11,404 --> 00:03:13,849
+class. As the clients are the ones that
+
+83
+00:03:13,849 --> 00:03:16,334
+are most clear about what they want, they
+
+84
+00:03:16,334 --> 00:03:18,218
+point to some objects and request the
+
+85
+00:03:18,218 --> 00:03:20,784
+boss to do it. They can get the output
+
+86
+00:03:20,784 --> 00:03:22,387
+once the workers finished building them.
+
+87
+00:03:23,590 --> 00:03:25,314
+The Bulider Design Pattern can be treated
+
+88
+00:03:25,314 --> 00:03:28,080
+like this diagram for easier
+
+89
+00:03:28,080 --> 00:03:30,896
+understanding. After we run the codes, we
+
+90
+00:03:30,896 --> 00:03:32,940
+successfully crafted the Nichirintou for
+
+91
+00:03:32,940 --> 00:03:35,826
+Tengen Sama and Inosuke, also the Saya
+
+92
+00:03:35,826 --> 00:03:38,462
+for Tanjirou. If we want to make more
+
+93
+00:03:38,462 --> 00:03:40,827
+Nichirintou and Saya, just put more codes
+
+94
+00:03:40,827 --> 00:03:42,631
+in the Director and Application Classes.
+
+95
+00:03:43,673 --> 00:03:45,357
+Now we finished our job and can take a
+
+96
+00:03:45,357 --> 00:03:47,441
+rest, thanks to the Builder Design
+
+97
+00:03:47,441 --> 00:03:49,806
+Pattern. Hope you have a better
+
+98
+00:03:49,806 --> 00:03:51,530
+understanding on the Builder and give it
+
+99
+00:03:51,530 --> 00:03:53,494
+a try in the project. Enjoy your
+
+100
+00:03:53,494 --> 00:03:55,860
+learning! Thanks for watching! Here are
+
+101
+00:03:55,860 --> 00:03:57,904
+some references I used. Feel free to take
+
+102
+00:03:57,904 --> 00:03:58,866
+a look. Thanks.
